@@ -21,6 +21,7 @@ You can specify the following variables:
 * `DISPLAY_HEIGHT=<height>` (768)
 * `RUN_XTERM={yes|no}` (yes)
 * `RUN_FLUXBOX={yes|no}` (yes)
+* `RUN_NOVNC={yes|no}` (yes) - set to `no` if connecting via a VNC client (e.g. Guacamole) that speaks RFB directly; x11vnc will still run on port 5900
 
 ### Stand-alone Demo
 Run:

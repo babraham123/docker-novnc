@@ -24,7 +24,8 @@ ENV HOME=/root \
     DISPLAY_WIDTH=1024 \
     DISPLAY_HEIGHT=768 \
     RUN_XTERM=yes \
-    RUN_FLUXBOX=yes
+    RUN_FLUXBOX=yes \
+    RUN_NOVNC=yes
 COPY . /app
 CMD ["/app/entrypoint.sh"]
 EXPOSE 8080
