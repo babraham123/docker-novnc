@@ -25,7 +25,9 @@ ENV HOME=/root \
     DISPLAY_HEIGHT=768 \
     RUN_XTERM=yes \
     RUN_FLUXBOX=yes \
-    RUN_NOVNC=yes
+    RUN_NOVNC=yes \
+    VNC_PORT=5900 \
+    NOVNC_PORT=8080
 
 # Replace apt-installed noVNC frontend with v1.6.0
 RUN git clone --depth 1 --branch v1.6.0 https://github.com/novnc/noVNC.git /tmp/novnc && \
@@ -40,4 +42,4 @@ RUN git clone --depth 1 --branch v1.6.0 https://github.com/novnc/noVNC.git /tmp/
 
 COPY . /app
 CMD ["/app/entrypoint.sh"]
-EXPOSE 8080
+EXPOSE 5900 8080
