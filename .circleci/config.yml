@@ -8,13 +8,13 @@ jobs:
       - setup_remote_docker
       - checkout
       - run: |
-          docker image build -t theasp/novnc:latest -f Dockerfile .
+          docker image build -t babraham123/novnc:latest -f Dockerfile .
       - deploy:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               echo "${DOCKER_PASS}" | docker login -u "${DOCKER_USER}" --password-stdin
               docker image ls
-              docker push theasp/novnc:latest
+              docker push babraham123/novnc:latest
             fi
 
 workflows:

@@ -15,7 +15,6 @@ This image is intended to be used for displaying X11 applications from other con
 ## Usage
 
 ### Variables
-
 You can specify the following variables:
 * `DISPLAY_WIDTH=<width>` (1024)
 * `DISPLAY_HEIGHT=<height>` (768)
@@ -28,12 +27,12 @@ You can specify the following variables:
 ### Stand-alone Demo
 Run:
 ```bash
-$ docker run --rm -it -p 8080:8080 theasp/novnc
+$ docker run --rm -it -p 8080:8080 babraham123/novnc
 ```
 Open a browser and see the `xterm` demo at `http://<server>:8080/vnc.html`
 
 ### V2 Composition
-A version of the [V2 docker-compose example](https://github.com/theasp/docker/blob/master/docker-compose.yml) is shown below to illustrate how this image can be used to greatly simplify the use of X11 applications in other containers. With just `docker-compose up -d`, your favorite IDE can be accessed via a browser.
+A version of the [V2 docker-compose example](https://github.com/babraham123/docker/blob/master/docker-compose.yml) is shown below to illustrate how this image can be used to greatly simplify the use of X11 applications in other containers. With just `docker-compose up -d`, your favorite IDE can be accessed via a browser.
 
 Some notable features:
 * An `x11` network is defined to link the IDE and novnc containers
@@ -54,7 +53,7 @@ services:
     networks:
       - x11
   novnc:
-    image: theasp/novnc:latest
+    image: babraham123/novnc:latest
     environment:
       # Adjust to your screen size
       - DISPLAY_WIDTH=1600
@@ -71,10 +70,8 @@ networks:
 
 ## On DockerHub / GitHub
 ___
-* DockerHub [theasp/novnc](https://hub.docker.com/r/theasp/novnc/)
-* GitHub [theasp/docker-novnc](https://github.com/theasp/docker-novnc)
+* GitHub [babraham123/docker-novnc](https://github.com/babraham123/docker-novnc)
 
-# Thanks
+## Credits
 ___
-This is based on the alpine container by @psharkey: https://github.com/psharkey/docker/tree/master/novnc
-Based on [wine-x11-novnc-docker](https://github.com/solarkennedy/wine-x11-novnc-docker) and [octave-x11-novnc-docker](https://hub.docker.com/r/epflsti/octave-x11-novnc-docker/).
+This container is based heavily on [theasp/docker-novnc](https://github.com/theasp/docker-novnc).
